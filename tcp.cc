@@ -170,8 +170,8 @@ main (int argc, char *argv[])
 
   /* create channel */
   PointToPointHelper pointToPoint;
-  pointToPoint.SetDeviceAttribute ("DataRate", StringValue ("5Mbps"));
-  pointToPoint.SetChannelAttribute ("Delay", StringValue ("2ms"));
+  pointToPoint.SetDeviceAttribute ("DataRate", StringValue ("1Mbps"));
+  pointToPoint.SetChannelAttribute ("Delay", StringValue ("10ms"));
   pointToPoint.EnablePcapAll("tcp");
   
   NetDeviceContainer devicesAB;
@@ -190,7 +190,7 @@ main (int argc, char *argv[])
   devicesCD.Get (1)->SetAttribute ("ReceiveErrorModel", PointerValue (em));
 
   Ptr<RateErrorModel> em1 = CreateObject<RateErrorModel> ();
-  em1->SetAttribute ("ErrorRate", DoubleValue (5e-5));
+  em1->SetAttribute ("ErrorRate", DoubleValue (1e-5));
   devicesBC.Get (1)->SetAttribute ("ReceiveErrorModel", PointerValue (em1));
 
   /* install stack and assign IP */
