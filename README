@@ -1,0 +1,10 @@
+Creating a chain network simulation
+
+Steps to execute :
+1. Open the directory and copy tcp.cc to scratch directory inside tarballs/ns-allinone-3.13/ns-3.13/ and gnu_plot_file in the ns-3.13 directory
+2. Run the below script to compile
+./waf
+3. Run the below script to execute
+./waf --run scratch/tcp
+4. Run below script
+gnuplot gnu_plot_file
